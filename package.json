@@ -1,0 +1,32 @@
+{
+  "name": "bazile-oasis",
+  "version": "1.0.0",
+  "description": "The Bazile Oasis",
+  "author": "Bazile",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --publish never"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.0.0",
+    "@capacitor/core": "^7.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^7.0.0",
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.bazile.oasis",
+    "productName": "The Bazile Oasis",
+    "directories": { "output": "dist", "buildResources": "build" },
+    "files": ["main.js", "www/**/*", "build/icon.png"],
+    "win": {
+      "icon": "build/icon.png",
+      "target": ["portable", "nsis"]
+    }
+  }
+}
